@@ -1,0 +1,602 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'redwinglight';
+}
+
+@font-face {
+    font-family: 'redwingmedium';
+    src: url('../font/redwing/redwing-medium-webfont.woff2') format('woff2'),
+        url('../font/redwing/redwing-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'redwinglight';
+    src: url('../font/redwing/redwing-light-webfont.woff2') format('woff2'),
+        url('../font/redwing/redwing-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary-color: 219, 47, 47;
+    --secondary-color: 255, 244, 193;
+    --maroon: 122, 8, 8;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.coming-soon {
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    width: 100%;
+    padding-inline: 50px;
+    margin-inline: auto;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    max-width: 1920px;
+}
+
+#desktop-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    object-position: center;
+    object-fit: cover;
+}
+
+#desktop-coming-text-top {
+    width: 100%;
+    max-width: 1050px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 17vh;
+    object-fit: contain;
+    object-position: center;
+}
+
+#desktop-coming-text-bottom {
+    width: 100%;
+    max-width: 1110px;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 17vh;
+    object-fit: contain;
+    object-position: center;
+}
+
+#desktop-soon-text-left {
+    max-height: 783px;
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    margin-block: auto;
+    width: 10vw;
+    object-fit: contain;
+    object-position: center;
+}
+
+#desktop-soon-text-right {
+    max-height: 783px;
+    position: absolute;
+    right: 50px;
+    top: 0;
+    bottom: 0;
+    margin-block: auto;
+    width: 10vw;
+    object-fit: contain;
+    object-position: center;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 880px;
+    height: 100%;
+    max-height: 440px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashed-line {
+    background-color: rgba(var(--secondary-color), 1);
+    width: 23px;
+    height: 3px;
+    position: absolute;
+}
+
+.dashed-line.top {
+    top: 10px;
+    right: 0;
+    left: 0;
+    margin-inline: auto;
+    rotate: 90deg;
+}
+
+.dashed-line.bottom {
+    bottom: 10px;
+    right: 0;
+    left: 0;
+    margin-inline: auto;
+    rotate: 90deg;
+}
+
+.dashed-line.left {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin-block: auto;
+}
+
+.dashed-line.right {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-block: auto;
+}
+
+#desktop-cm-text {
+    width: 61px;
+    height: 27px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#fueled-by-text {
+    font-weight: 300;
+    font-size: 20px;
+    text-align: right;
+    color: rgba(var(--secondary-color), 1);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#follow-instagram-text {
+    font-weight: 300;
+    font-size: 16px;
+    text-align: left;
+    color: rgba(var(--secondary-color), 1);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#follow-instagram-text a {
+    color: rgba(var(--secondary-color), 1);
+}
+
+#follow-instagram-text a:hover, #follow-instagram-text a:focus {
+    text-decoration: none;
+}
+
+#copyright-text {
+    font-weight: 300;
+    font-size: 16px;
+    text-align: right;
+    color: rgba(var(--secondary-color), 1);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.content-box {
+    width: 100%;
+    max-width: 429px;
+    color: rgba(var(--secondary-color), 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.content-box h1 {
+    text-transform: uppercase;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-family: 'redwingmedium';
+}
+
+.content-box h2 {
+    text-transform: uppercase;
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    font-family: 'redwingmedium';
+}
+
+.content-box h4 {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+
+#form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#form input {
+    outline: none;
+    border: none;
+    padding: 13px 13px;
+    background-color: rgba(var(--secondary-color), 0.5);
+    font-size: 12px;
+    width: 100%;
+}
+
+#form input::placeholder {
+    color: rgba(var(--maroon), 1);
+    caret-color: rgba(var(--maroon), 1);
+}
+
+#form button {
+    outline: none;
+    border: none;
+    padding: 11px 15px 10px;
+    width: 100%;
+    background-color: rgba(var(--secondary-color), 1);
+    color: rgba(var(--maroon), 1);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'redwingmedium';
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    clip-path: polygon(2% 0%, 98% 0%, 100% 20%, 100% 80%, 98% 105%, 2% 105%, 0% 80%, 0% 20%);
+}
+
+#form button:hover, #form button:focus {
+    background-color: rgba(var(--secondary-color), 0.9);
+}
+
+#mobile-comingsoon-text-bottom, #mobile-comingsoon-text-top {
+    display: none;
+}
+
+@media only screen and (max-width: 1920px) {
+    .container {
+        max-width: 1580px;
+    }
+}
+
+@media only screen and (max-width: 1700px) {
+    .container {
+        max-width: 1280px;
+    }
+
+    #desktop-coming-text-top, #desktop-coming-text-bottom {
+        height: 15vh;
+    }
+
+    .wrapper {
+        max-width: 780px;
+        max-height: 400px;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .container {
+        max-width: 1100px;
+    }
+
+    #desktop-coming-text-top, #desktop-coming-text-bottom {
+        height: 10vh;
+    }
+
+    #desktop-soon-text-left, #desktop-soon-text-right {
+        width: 6vw;
+    }
+
+    .wrapper {
+        max-width: 700px;
+        max-height: 380px;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .wrapper {
+        max-width: 680px;
+        max-height: 340px;
+    }
+
+    #desktop-cm-text {
+        width: 50px;
+        height: 20px;
+    }
+
+    .dashed-line {
+        width: 16px;
+        height: 1px;
+    }
+
+    #fueled-by-text {
+        font-size: 16px;
+    }
+
+    #follow-instagram-text, #copyright-text {
+        font-size: 14px;
+    }
+
+    .content-box h1 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .content-box h2 {
+        font-size: 38px;
+        line-height: 38px;
+    }
+
+    .content-box h4 {
+        font-size: 18px;
+    }
+
+    #form button {
+        padding: 12.5px 15px 11.5px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 1180px) {
+
+    #desktop-coming-text-top, #desktop-coming-text-bottom {
+        height: 8vh;
+    }
+
+    #desktop-soon-text-left, #desktop-soon-text-right {
+        width: 10vw;
+    }
+
+    .wrapper {
+        max-width: 580px;
+        max-height: 340px;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+
+    #desktop-coming-text-top, #desktop-coming-text-bottom {
+        display: none;
+    }
+
+    #desktop-soon-text-left, #desktop-soon-text-right {
+        display: none;
+    }
+
+    .wrapper {
+        max-width: 100%;
+        max-height: 100%;
+        height: 100%;
+    }
+
+    #mobile-comingsoon-text-top {
+        display: block;
+        margin: 50px auto;
+        width: 50vw;
+    }
+
+    #mobile-comingsoon-text-bottom {
+        display: block;
+        margin: 50px auto;
+        width: 50vw;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+    .container {
+        padding-inline: 15px;
+    }
+
+    #mobile-comingsoon-text-top {
+        margin: 20px auto;
+        width: 100%;
+    }
+
+    #mobile-comingsoon-text-bottom {
+        margin: 20px auto;
+        width: 100%;
+    }
+
+    .content-box {
+        max-width: 100%;
+        padding: 0 25px;
+    }
+
+    #desktop-cm-text {
+        width: 35px;
+        height: 15px;
+    }
+
+    .dashed-line {
+        width: 11px;
+    }
+
+    .dashed-line.top {
+        left: 40%;
+        margin-inline: unset;
+    }
+
+    .dashed-line.bottom {
+        right: unset;
+        left: 60%;
+        margin-inline: unset;
+    }
+
+    #fueled-by-text {
+        font-size: 14px;
+    }
+
+    #follow-instagram-text {
+        font-size: 12px;
+    }
+
+    #copyright-text {
+        font-size: 10px;
+    }
+
+    .content-box h1 {
+        font-size: 42px;
+        line-height: 42px;
+    }
+
+    .content-box h2 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .content-box h4 {
+        font-size: 16px;
+    }
+
+    #form {
+        gap: 10px;
+    }
+
+    #form input {
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+
+    #form button {
+        padding: 10.5px 15px 9.5px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+
+    .dashed-line.top {
+        left: 30%;
+    }
+
+    .dashed-line.bottom {
+        left: 50%;
+        margin-inline: unset;
+    }
+
+    #fueled-by-text {
+        font-size: 14px;
+    }
+
+    #follow-instagram-text {
+        font-size: 12px;
+    }
+
+    #copyright-text {
+        font-size: 10px;
+    }
+
+    .content-box h1 {
+        font-size: 42px;
+        line-height: 42px;
+    }
+
+    .content-box h2 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .content-box h4 {
+        font-size: 16px;
+    }
+
+    #form {
+        gap: 10px;
+    }
+
+    #form input {
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+
+    #form button {
+        padding: 10.5px 15px 9.5px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+
+    .dashed-line.top {
+        left: 30%;
+    }
+
+    .dashed-line.bottom {
+        display: none;
+    }
+
+    #follow-instagram-text {
+        bottom: 24px;
+        left: unset;
+        right: 0;
+    }
+    .content-box h1 {
+        font-size: 42px;
+        line-height: 42px;
+    }
+
+    .content-box h2 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .content-box h4 {
+        font-size: 16px;
+    }
+
+    #form {
+        gap: 10px;
+    }
+
+    #form input {
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+
+    #form button {
+        padding: 10.5px 15px 9.5px;
+        font-size: 12px;
+    }
+}
